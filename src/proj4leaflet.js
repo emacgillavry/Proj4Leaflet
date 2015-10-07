@@ -193,9 +193,11 @@
 					projectedTileSize = this.options.tileSize / this._scales[i];
 					// to prevent very small rounding errors from causing us to round up,
 					// cut any decimals after 3rd before rounding up.
-					x = Math.ceil(parseFloat((crsBounds[2] - crsBounds[0]) / projectedTileSize).toPrecision(3)) *
+					//x = Math.ceil(parseFloat((crsBounds[2] - crsBounds[0]) / projectedTileSize).toPrecision(3)) *
+					x = Math.ceil(parseFloat((crsBounds[2] - crsBounds[0]) / projectedTileSize)) *
 					    projectedTileSize * this._scales[i];
-					y = Math.ceil(parseFloat((crsBounds[3] - crsBounds[1]) / projectedTileSize).toPrecision(3)) *
+					//y = Math.ceil(parseFloat((crsBounds[3] - crsBounds[1]) / projectedTileSize).toPrecision(3)) *
+					y = Math.ceil(parseFloat((crsBounds[3] - crsBounds[1]) / projectedTileSize)) *
 					    projectedTileSize * this._scales[i];
 					sizes[i] = L.point(x, y);
 				}
